@@ -7,12 +7,12 @@ class Libro(models.Model):
     genero= models.CharField(max_length=25)
     año_de_publicacion = models.IntegerField()
 
-class Autor(models.Model):
+class Autores(models.Model):
     nombre = models.CharField(max_length=40)
     apellido= models.CharField(max_length=40)
     nacionalidad= models.CharField(max_length=25)
 
-class Editorial(models.Model):
+class Editoriales(models.Model):
     nombre = models.CharField(max_length=40)
     pais= models.CharField(max_length=40)
     direccion = models.CharField(max_length=50)

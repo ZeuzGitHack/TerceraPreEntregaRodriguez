@@ -7,8 +7,8 @@ def inicio(req):
 def libros(req):
     return render(req, "libros.html", {})
 
-def autor(req):
-    return render(req, "autor.html", {})
+def autores(req):
+    return render(req, "autores.html", {})
 
-def editorial(req):
-    return render(req, "editorial.html", {})
+def editoriales(req):
+    return render(req, "editoriales.html", {})

@@ -1,0 +1,28 @@
+<header>
+    {% load static %}
+<!-- header inner -->
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+            <div class="full">
+                <div class="center-desk">
+                    <div class="logo"> <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#"></a> </div>
+                </div>
+            </div>
+            </div>
+            <div class="menu-area">
+                    <nav class="main-menu">
+                        <ul class="menu-area-main">
+                        <li><a href="{% url 'Inicio'%}">Inicio</a> </li>
+                        <li><a href="{% url 'Editoriales'%}">Editoriales</a> </li>
+                        <li><a href="{% url 'Libros'%}">Libros</a></li>
+                        <li><a href="{% url 'Autores'%}">Autores</a></li>
+                        </ul>
+                    </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end header inner -->
+</header>
