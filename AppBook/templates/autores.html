@@ -1,11 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autor</title>
-</head>
-<body style="background-color: blue;">
-    <h1>Vista Autor</h1>
-</body>
-</html>
+{% extends 'principal.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Book Me-Autores</title>
+{% endblock titulo %}
+
+{% block ContenidoQueCambia %}
+<!--Autores -->
+<div class="about-bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="abouttitle">
+               <h2>Autores</h2>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="Books">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-10 offset-md-1">
+            <div class="titlepage">
+               <span style="font-size: 25px;">Información sobre los Autores</span> 
+            </div>
+         </div>
+      </div>
+      <div class="row box">
+         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="book-box">
+               <figure><img src="{% static 'images/book-2.jpg' %}" alt="img"/></figure>
+            </div>
+         </div>
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="book-box">
+               <figure><p>ESPACIO PARA FORM</p></figure>
+            </div>
+         </div>
+         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="book-box">
+               <figure><img src="{% static 'images/book-2.jpg' %}" alt="img"/></figure>
+            </div>
+         </div>
+         <div class="col-md-6 offset-md-3">
+            <p>'Los autores de libros son los creadores de universos paralelos, donde la magia y la realidad se entrelazan en una danza eterna' <br> "Jorge Luis Borges".</p>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Fin Autores -->
+{% endblock ContenidoQueCambia %}

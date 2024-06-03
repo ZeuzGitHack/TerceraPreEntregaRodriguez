@@ -5,6 +5,6 @@ from AppBook.views import inicio, libros, editoriales, autores
 urlpatterns = [
     path('', inicio, name = "Inicio"),
     path('libros/', libros, name = "Libros"),
-    path('autor/', autores, name = "Autores"),
-    path('editorial/', editoriales, name = "Editoriales"),
+    path('autores/', autores, name = "Autores"),
+    path('editoriales/', editoriales, name = "Editoriales"),
 ]
