@@ -30,9 +30,15 @@
       <div class="row border">
          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <div class="about-box">
-               <center>
-                  <p>ESPACIO PARA FORM</p>
-               </center>
+               {% block formulario %}
+               
+               <ul> 
+                  {% for edit in lista_editoriales %}
+                     <li style="font-size: 18px; color: red;">"{{edit.nombre}}" - {{edit.direccion}}-{{edit.pais}}</li>
+                  {%endfor%}
+               </ul>
+               
+               {% endblock formulario %}
             </div>
          </div>
          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">

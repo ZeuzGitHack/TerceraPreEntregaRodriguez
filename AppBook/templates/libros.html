@@ -30,9 +30,16 @@
       <div class="row border">
          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
             <div class="about-box">
-               <center>
-                  <p>ESPACIO PARA FORM</p>
-               </center>
+               
+               {% block formulario %}
+               
+               <ul> 
+                  {% for libro in lista_libros %}
+                     <li style="font-size: 16px; color: purple;">"{{libro.titulo}}" - {{libro.autor}} - {{libro.genero}} - {{libro.año_de_publicacion}}</li>
+                  {%endfor%}
+               </ul>
+               
+               {% endblock formulario %}
             </div>
          </div>
          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">

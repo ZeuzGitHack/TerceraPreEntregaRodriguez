@@ -35,7 +35,17 @@
          </div>
          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             <div class="book-box">
-               <figure><p>ESPACIO PARA FORM</p></figure>
+               
+               {% block formulario %}
+               
+               <ul> 
+                  {% for autor in lista_autores %}
+                     <li style="font-size: 18px; color: #03246b; text-align: left;">"{{autor.nombre}} {{autor.apellido}}"" - {{autor.nacionalidad}}</li>
+                  {%endfor%}
+               </ul>
+               
+               {% endblock formulario %}
+                  
             </div>
          </div>
          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
