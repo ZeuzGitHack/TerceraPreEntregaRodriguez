@@ -7,6 +7,8 @@ from AppBook.views import (
     formularioLibro,
     formularioAutor,
     formularioEditorial,
+    busquedaLibro,
+    buscar,
     )
 
 urlpatterns = [
@@ -17,4 +19,6 @@ urlpatterns = [
     path('formulario-libro/', formularioLibro, name = "FormularioLibro"),
     path('formulario-autor/', formularioAutor, name = "FormularioAutor"),
     path('formulario-editorial/', formularioEditorial, name = "FormularioEditorial"),
+    path('busqueda-libro/', busquedaLibro, name = "BusquedaLibro"),
+    path('buscar/', buscar, name = "Buscar"),
 ]

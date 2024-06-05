@@ -7,7 +7,7 @@
 <p style="color: red;"> Los Datos Ingresados son erroneos</p>
 {% endif %}
 	
-<form action=""  method="post">{% csrf_token %}
+<form action="{% url 'FormularioEditorial' %}"  method="post">{% csrf_token %}
 	<table>
 		{{form_editorial.as_table}}
 	</table>

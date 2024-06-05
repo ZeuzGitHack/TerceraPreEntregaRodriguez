@@ -1,0 +1,46 @@
+{% extends 'principal.html' %}
+{% load static %}
+
+{% block titulo %}
+   <title>Busqueda</title>
+{% endblock titulo %}
+
+{% block ContenidoQueCambia %}
+<!-- Titulo -->
+<div class="about-bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="abouttitle">
+               <h2>Buscar Libro</h2>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Formulario -->
+<div class="Library">
+   <div class="titlepage">
+      <form action="{% url 'Buscar' %}" method="get">
+         <p style="font-size: 20px;">Libro: <input type="text" name="libro"></p>
+         <input type="submit" value="Buscar">
+      </form>
+   </div>
+</div>
+<!-- Fin Formulario -->
+
+<div class="bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-10 offset-md-1">
+            <div class="Library-box">
+               <figure>
+                  <img src="{% static 'images/Library-.jpg' %}" alt="#"/>
+               </figure>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock ContenidoQueCambia %}
