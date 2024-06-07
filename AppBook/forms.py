@@ -1,4 +1,5 @@
 from django import forms
+from .models import Libro
 
 
 class LibroFormulario(forms.Form):
@@ -6,6 +7,10 @@ class LibroFormulario(forms.Form):
 	autor= forms.CharField()
 	genero= forms.CharField()
 	año_de_publicacion = forms.IntegerField()
+	resena= forms.CharField(widget=forms.Textarea(attrs={'rows': 10, 'cols': 30}))
+	class Meta:
+		model = Libro
+		fields = ['campo_texto']
 
 class AutorFormulario(forms.Form):
 	nombre= forms.CharField()

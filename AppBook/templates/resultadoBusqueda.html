@@ -2,46 +2,60 @@
 {% load static %}
 
 {% block titulo %}
-   <title>Buscar</title>
+   <title>Busqueda</title>
 {% endblock titulo %}
 
 {% block ContenidoQueCambia %}
-
+<!-- Titulo -->
 <div class="about-bg">
    <div class="container">
       <div class="row">
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="abouttitle">
-               <h2>Resultado de Busaqueda</h2>
+               <h2>Buscar Libro</h2>
             </div>
          </div>
       </div>
    </div>
 </div>
-<!--Books -->
-<div class="Books">
+<!-- Formulario -->
+<div class="Library">
+   <div class="titlepage">
+      <form action="{% url 'Buscar' %}" method="get">
+         <p style="font-size: 20px;">Libro: <input type="text" name="libro"></p>
+         <input type="submit" value="Buscar">
+      </form>
+      <!-- Fin Formulario -->
+      <!-- Resultado -->
+      <div class="book-box">
+         {% if libro %}
+         <br>
+         <h4>Resultados de la búsqueda:</h4>
+         <ul>
+            <li style="font-size: 20px; color: purple;">{{ libro.titulo }}</li>
+            <li style="font-size: 20px; color: purple;">{{ libro.autor }}</li>
+            <li style="font-size: 20px; color: purple;">{{ libro.genero }}</li>
+            <li style="font-size: 20px; color: purple;">{{ libro.año_de_publicacion }}</li>
+            <li style="font-size: 20px; color: purple;"> - <br>{{ libro.resena }}</li>
+         {% else %}
+            <p style="font-size: 20px; color: red;">{{mensaje}}</p>
+         </ul>
+         {% endif %}
+      </div>
+         <!-- Fin Resultado -->
+   </div>
+</div>
+<div class="bg">
    <div class="container">
-      <div class="row box">
-         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-            <div class="book-box">
-               <figure><img src="{% static 'images/book-1.jpg' %}" alt="img"/></figure>
-            </div>
-         </div>
-         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="book-box">
-               <p style="font-size: 30px; color: purple;">Busqueda</p>
-               <p style="font-size: 25px; color: brown;">"{{libro.titulo}}"<br>{{libro.autor}}<br>{{libro.genero}}<br>{{libro.año_de_publicacion}}<br></p>
-               <p style="font-size: 30px; color: red;">{{mensaje}}</p>
-               
-            </div>
-         </div>
-         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-            <div class="book-box">
-               <figure><img src="{% static 'images/book-1.jpg' %}" alt="img"/></figure>
+      <div class="row">
+         <div class="col-md-10 offset-md-1">
+            <div class="Library-box">
+               <figure>
+                  <img src="{% static 'images/Library-.jpg' %}" alt="#"/>
+               </figure>
             </div>
          </div>
       </div>
    </div>
 </div>
-<!-- end Books -->
 {% endblock ContenidoQueCambia %}

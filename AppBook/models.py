@@ -6,9 +6,11 @@ class Libro(models.Model):
     autor = models.CharField(max_length=60)
     genero= models.CharField(max_length=25)
     año_de_publicacion = models.IntegerField()
+    resena= models.TextField(default="Sin reseñas")
 
     def __str__(self):
         return f"{self.titulo}-{self.autor}-{self.genero}-{self.año_de_publicacion}"
+
 
 class Autores(models.Model):
     nombre = models.CharField(max_length=40)

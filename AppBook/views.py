@@ -25,7 +25,7 @@ def formularioLibro(req):
 		print(form_libro)
 		if form_libro.is_valid:
 			informacion = form_libro.cleaned_data
-			libro = Libro(titulo=informacion["titulo"], autor=informacion["autor"], genero=informacion["genero"], año_de_publicacion=informacion["año_de_publicacion"])
+			libro = Libro(titulo=informacion["titulo"], autor=informacion["autor"], genero=informacion["genero"], año_de_publicacion=informacion["año_de_publicacion"], resena=informacion["reseña"])
 			libro.save()
 			return render(req, "inicio.html",{"mensaje": "Se guardo nuevo Libro"})
 		else:
@@ -66,7 +66,7 @@ def formularioEditorial(req):
 	return render(req, "formulariosEditorial.html", {"form_editorial": form_editorial})
 
 def busquedaLibro(req):
-	return render(req, "busquedaLibro.html")
+	return render(req, "resultadoBusqueda.html")
 
 def buscar(req):
 	try:
@@ -75,7 +75,7 @@ def buscar(req):
 			libros = Libro.objects.get(titulo=libro)
 			return render(req, "resultadoBusqueda.html", {"libro":libros})
 		else:
-			return render(req, "resultadoBusqueda.html", {"mensaje":"no enviado"})
+			return render(req, "resultadoBusqueda.html", {"mensaje":"Ingrese un Titulo"})
 	except:
 		return render(req, "resultadoBusqueda.html", {"mensaje":"Libro no encontrado"})
 
