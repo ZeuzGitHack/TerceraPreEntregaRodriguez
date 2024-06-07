@@ -25,7 +25,7 @@ def formularioLibro(req):
 		print(form_libro)
 		if form_libro.is_valid:
 			informacion = form_libro.cleaned_data
-			libro = Libro(titulo=informacion["titulo"], autor=informacion["autor"], genero=informacion["genero"], año_de_publicacion=informacion["año_de_publicacion"], resena=informacion["reseña"])
+			libro = Libro(titulo=informacion["titulo"], autor=informacion["autor"], genero=informacion["genero"], año_de_publicacion=informacion["año_de_publicacion"], reseña=informacion["reseña"])
 			libro.save()
 			return render(req, "inicio.html",{"mensaje": "Se guardo nuevo Libro"})
 		else:
